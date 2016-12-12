@@ -1,0 +1,59 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<GroceryStore.Models.Food>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+<h2>@ViewBag.Selection</h2>
+
+@using (Html.BeginForm("Index", "Store", FormMethod.Get))
+{
+    <p>
+        Filter: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<div class="row storeRow">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 storeItem">
+            <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+            @Html.ActionLink("Add to Cart", "AddToCart", "ShoppingCart", new { id = item.FoodID }, null)
+            <img src="@Url.Content("~/Content/Images/" + @Html.DisplayFor(modelItem => item.ImgName))" title="" style="max-height: 100%; max-width: 100%;">
+            <dl class="dl-horizontal">
+                <dt>
+                    Food Group:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.FoodGroup.Name)
+                </dd>
+                <dt>
+                    Vendor:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.Vendor.Name)
+                </dd>
+                <dt>
+                    Description:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </dd>
+                <dt>
+                    Price:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </dd>
+            </dl>
+        </div>
+    }
+</div>
+
+    <br />
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,6 @@
+﻿@model IEnumerable<GroceryStore.Models.FoodGroup>
+@foreach (var item in Model) {
+    <li>
+        @Html.ActionLink(item.Name, "Index", "Store", new { foodGroup = item.FoodGroupID }, null)
+    </li>
+}

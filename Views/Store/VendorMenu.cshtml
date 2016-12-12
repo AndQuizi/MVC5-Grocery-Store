@@ -1,0 +1,6 @@
+﻿@model IEnumerable<GroceryStore.Models.Vendor>
+@foreach (var item in Model) {
+    <li>
+        @Html.ActionLink(item.Name, "Index", "Store", new { vendor = item.VendorID }, null)
+    </li>
+}
