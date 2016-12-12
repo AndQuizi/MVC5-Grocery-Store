@@ -3,7 +3,7 @@
 - I created an ASP Web Forms project in the past, which is basically has the models of MVC, but no VC.
 - Since I only had expierence with Web Forms, I wanted to properly learn MVC5
 
-# Things I was seeking  to learn
+# Things I was seeking  to learn, and did so
 - Pretty much every related to Entity Framwork
 - Code First with EF
 - Database first with EF
