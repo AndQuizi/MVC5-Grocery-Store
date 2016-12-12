@@ -10,5 +10,5 @@
 - Database Migrations
 - Razor syntax
 - Brush up on MVC concepts
-- Brush up on sessions and account management
+- Brush up on ASP.NET sessions and account management
 - Be competent enough with MVC to put it on my resume
