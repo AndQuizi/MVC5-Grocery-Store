@@ -11,7 +11,7 @@
 - Razor syntax
 - Brush up on MVC concepts
 - Brush up on ASP.NET sessions and account management
-- Be competent enough with MVC to put it on my resume
+- Be competent enough with MVC5 to put it on my resume
 
 # Things I didn't bother with
 - CSS
