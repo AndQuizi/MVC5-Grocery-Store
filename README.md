@@ -4,7 +4,7 @@
 - Since I only had expierence with Web Forms, I wanted to properly learn MVC5
 
 # Things I was seeking  to learn, and did so
-- Pretty much every related to Entity Framwork
+- Pretty much every related to Entity Framwork (EF)
 - Code First with EF
 - Database first with EF
 - Database Migrations
